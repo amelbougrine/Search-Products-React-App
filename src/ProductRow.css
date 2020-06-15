@@ -1,6 +1,6 @@
-.ProductRow-out-of-stock {
+.productRow-out-of-stock {
     color: red;
 }
-.red {
-    color: 'red'
+.del {
+    color: red;
 }

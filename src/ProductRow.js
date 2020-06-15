@@ -14,7 +14,7 @@ class ProductRow extends React.Component {
           {this.props.product.price}
         </td>
         <td>
-          <button onClick={this.destroy} className='red'>x</button>
+          <button className="del" onClick={this.destroy} >x</button>
         </td>
       </tr>
     );
