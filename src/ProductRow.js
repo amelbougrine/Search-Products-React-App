@@ -10,11 +10,11 @@ class ProductRow extends React.Component {
             {this.props.product.name}
           </span>
         </td>
-        <td>
+        <td dir="rtl">
           {this.props.product.price}
         </td>
         <td>
-          <button className="del" onClick={this.destroy} >x</button>
+          <button onClick={this.destroy} ><b>x</b></button>
         </td>
       </tr>
     );

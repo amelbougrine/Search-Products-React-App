@@ -1,9 +1,10 @@
 import React from 'react';
+import './ProductForm.css';
 
 class ProductForm extends React.Component {
   render() {
     return (
-      <form>
+      <form className='secForm'>
         <h3>Enter a new product</h3>
         <p>
           <label>Name<br />

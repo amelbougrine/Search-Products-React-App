@@ -4,9 +4,9 @@ import './ProductTableHeader.css'
 class ProductTableHeader extends React.Component {
   render() {
     return(
-      <th>
+      <th className="heading">
         {this.props.column}
-        <button className="ProductTableHeader-currents">&#x25B2;</button>
+        <button>&#x25B2;</button>
         <button>&#x25BC;</button>
       </th>
     );

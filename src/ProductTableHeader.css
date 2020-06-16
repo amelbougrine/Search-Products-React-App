@@ -1,3 +1,11 @@
-.ProductTableHeader-current {
-    background-color: #0ff;
-  }
+button {
+  background-color: #43acbd;
+  border: 1px solid #333232a8;
+  margin: 0 5px;
+}
+button:hover {
+  background-color: #2e7883;
+}
+.heading {
+  padding: 0 20px 0 0;
+}

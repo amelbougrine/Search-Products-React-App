@@ -1,16 +1,18 @@
+@import url(https://fr.allfont.net/allfont.css?fonts=courier+new);
 body {
     background-image: url(./font.png);
+    font-family: 'Courier New', Courier, monospace !important;
 }
 .container {
     width: 400px;
-    /* height: 500px; */
-    background: linear-gradient(#56daee, #143236);
-    margin: 0 auto;
-    box-shadow: 0px 0px 10px #131212;
+    background-color: #3ea0af;
+    margin: 30px auto;
+    box-shadow: 0px 0px 15px #131212;
+    padding-bottom: 20px;
 }
 .App-header {
-    font-size: 16px;
-    text-align: center;
-    height: 80px;
+    font-size: 14px;
+    margin: 0 65px;
+    height: 65px;
     line-height: 80px;
 }
