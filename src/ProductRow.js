@@ -5,16 +5,16 @@ class ProductRow extends React.Component {
   render() {
     return (
       <tr>
-        <td>
+        <td className="del">
+          <button onClick={this.destroy} title='Delete'><b>x</b></button>
+        </td>
+        <td className='name'>
           <span className={this.props.product.stocked ? "" : "productRow-out-of-stock"}>
             {this.props.product.name}
           </span>
         </td>
-        <td dir="rtl">
+        <td dir="rtl" className='price'>
           {this.props.product.price}
-        </td>
-        <td>
-          <button onClick={this.destroy} ><b>x</b></button>
         </td>
       </tr>
     );

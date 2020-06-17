@@ -13,9 +13,10 @@ class ProductTable extends React.Component {
 
     return (
       <div className="table">
-        <table>
+        <table style={{margin: '0 auto 0 25px'}}>
           <thead>
             <tr>
+              <th></th>
               <ProductTableHeader column="Name"></ProductTableHeader>
               <ProductTableHeader column="Price"></ProductTableHeader>
             </tr>

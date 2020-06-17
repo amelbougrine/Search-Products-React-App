@@ -27,7 +27,7 @@ class ProductForm extends React.Component {
             In Stock?
           </label>
         </p>
-        <input type='submit' value='Save' />
+        <input className='button' type='submit' value='Save' />
       </form>
     );
   }

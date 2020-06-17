@@ -1,6 +1,16 @@
 .secForm{
     padding: 10px 65px;
 }
-.secForm h3 {
-    color: #000000;
+.secForm p {
+    margin: 8px 0;
+}
+.button {
+    width: 60px;
+    height: 30px;
+    font-weight: bold;
+    background-color: #43acbd;
+    border: 1px solid #333232a8;
+}
+.button:hover {
+    background-color: #2e7883;
 }

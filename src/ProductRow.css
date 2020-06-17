@@ -1,3 +1,12 @@
 .productRow-out-of-stock {
     color: #f0b2b2;
 }
+.del {
+    width: 40px;
+}
+.name {
+    border-right: 1px solid #333232a8;
+}
+.price, .name {
+    width: 130px;
+}
