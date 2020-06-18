@@ -5,9 +5,9 @@ class Filters extends React.Component {
   render() {
     return (
       <form className="firstForm">
-        <input type='text' placeholder='Search...' />
+        <input type='text' placeholder='Search...' value={this.props.filtertext}/>
         <p>
-          <input type='checkbox' />
+          <input type='checkbox' checked={this.props.inStockOnly}/>
           Only show stocked products
         </p>
       </form>
