@@ -20,6 +20,19 @@ class Products extends React.Component {
       inStockOnly: false,
       products: PRODUCTS
     };
+    this.saveProduct = this.saveProduct.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
+  }
+  saveProduct(product) {
+    product.id = new Date().getTime();
+    this.setState((prevState) => {
+      let products = prevState.products;
+      products[product.id] = product;
+      return {products};
+    });
+  }
+  handleFilter(filterInput) {
+    this.setState(filterInput);
   }
   render() {
     return (
@@ -27,13 +40,16 @@ class Products extends React.Component {
         <Filters
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
+          onFilter={this.handleFilter}
         ></Filters>
         <ProductTable 
           products={this.state.products}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
         ></ProductTable>
-        <ProductForm></ProductForm>
+        <ProductForm
+          onSave={this.saveProduct()}
+        ></ProductForm>
       </div>
     );
   } 
