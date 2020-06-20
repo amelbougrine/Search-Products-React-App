@@ -2,8 +2,8 @@ import React from 'react';
 import './Filters.css'
 
 class Filters extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(e) {

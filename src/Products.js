@@ -4,12 +4,12 @@ import ProductForm from './ProductForm';
 import ProductTable from './ProductTable.js';
 
 var PRODUCTS = {
-  '1': {id: 1, category: 'Musical Instruments', price: '459.99$', stocked: true, name: 'Clarinet'},
-  '2': {id: 2, category: 'Musical Instruments', price: '5,000.00$', stocked: true, name: 'Cello'},
-  '3': {id: 3, category: 'Musical Instruments', price: '11,000.00$', stocked: false, name: 'Fortepiano'},
-  '4': {id: 4, category: 'Furniture', price: '799.00$', stocked: true, name: 'Chaise Lounge'},
-  '5': {id: 5, category: 'Furniture', price: '1,300.00$', stocked: false, name: 'Dining Table'},
-  '6': {id: 6, category: 'Furniture', price: '100.00$', stocked: true, name: 'Bean Bag'}
+  '1': {id: 1, category: 'Smartphone', price: '339,99$', stocked: true, name: 'Huawei Y9S'},
+  '2': {id: 2, category: 'Smartphone', price: '1809,99$', stocked: true, name: 'iPhone 11'},
+  '3': {id: 3, category: 'Smartphone', price: '1299,00$', stocked: false, name: 'Galaxy S10'},
+  '4': {id: 4, category: 'Laptop', price: '2806,99$', stocked: true, name: 'MacBook Pro'},
+  '5': {id: 5, category: 'Laptop', price: '1406,00$', stocked: false, name: 'HP EliteBook'},
+  '6': {id: 6, category: 'Tablet', price: '735,99$', stocked: true, name: 'Apple iPad'}
 }
 
 class Products extends React.Component {
@@ -20,19 +20,29 @@ class Products extends React.Component {
       inStockOnly: false,
       products: PRODUCTS
     };
-    this.saveProduct = this.saveProduct.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
+    this.saveProduct = this.saveProduct.bind(this);
+    this.handleDestroy = this.handleDestroy.bind(this);
+  }
+  handleFilter(filterInput) {
+    this.setState(filterInput);
   }
   saveProduct(product) {
-    product.id = new Date().getTime();
+    if (!product.id ) {
+      product.id = new Date().getTime();
+    }
     this.setState((prevState) => {
       let products = prevState.products;
       products[product.id] = product;
       return {products};
     });
   }
-  handleFilter(filterInput) {
-    this.setState(filterInput);
+  handleDestroy(productId) {
+    this.setState((prevState) => {
+      let products = prevState.products;
+      delete products[productId];
+      return {products};
+    });
   }
   render() {
     return (
@@ -46,9 +56,10 @@ class Products extends React.Component {
           products={this.state.products}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
+          onDestroy={this.handleDestroy}
         ></ProductTable>
         <ProductForm
-          onSave={this.saveProduct()}
+          onSave={this.saveProduct}
         ></ProductForm>
       </div>
     );
